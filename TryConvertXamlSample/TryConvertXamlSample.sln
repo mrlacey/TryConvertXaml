@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30320.27
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TryConvertXamlSample", "TryConvertXamlSample.csproj", "{D4D3ECD5-BFFD-4F77-8E13-093C8C2135EE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D4D3ECD5-BFFD-4F77-8E13-093C8C2135EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4D3ECD5-BFFD-4F77-8E13-093C8C2135EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4D3ECD5-BFFD-4F77-8E13-093C8C2135EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4D3ECD5-BFFD-4F77-8E13-093C8C2135EE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {764AC9DB-47A6-42ED-9A12-D7EACA9163AE}
+	EndGlobalSection
+EndGlobal
