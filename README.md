@@ -9,7 +9,7 @@ implementation of `ICustomAnalyzer`.
 The program:
 - writes our the original XAML contents.
 - parses the document identifying changes to make based on the analyzer(s).
-- the file is the modified based on what the analyzer(s) report.
+- the file is modified based on what the analyzer(s) report.
 - the modified file contents are then shown on screen.
 
 feedback appreciated.
