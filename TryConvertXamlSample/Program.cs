@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using RapidXaml;
 
 namespace TryConvertXamlSample
@@ -121,11 +123,39 @@ namespace TryConvertXamlSample
 
         public AnalysisActions Analyze(RapidXamlElement element, ExtraAnalysisDetails extraDetails)
         {
-            // This is the simplest change to make.
-            // It just says rename the element.
-            // Checking for and then adding and/or removing attributes can also be done
-            // There are helpers available to work with the `element` more easily.
-            return AutoFixAnalysisActions.RenameElement("WebView2");
+            var defaultAllias = "controls";
+            var xmlnamespace = "using:Microsoft.UI.Xaml.Controls";
+            var aliasToUse = defaultAllias;
+            var addAlias = true;
+
+            extraDetails.TryGet("xmlns", out Dictionary<string, string> xmlns);
+
+            // Check to see if there is already an alias for the desired namespace
+            var xns = xmlns.FirstOrDefault(x => x.Value == xmlnamespace);
+
+            if (xns.Equals(default(KeyValuePair<string, string>)))
+            {
+                // Make the default alias unique (if already in use) by adding a number to the end
+                var numericSuffix = 1;
+                while (xmlns.ContainsKey(aliasToUse))
+                {
+                    aliasToUse = defaultAllias + numericSuffix++.ToString();
+                }
+            }
+            else
+            {
+                aliasToUse = xns.Key;
+                addAlias = false;
+            }
+
+            var result = AutoFixAnalysisActions.RenameElement($"{aliasToUse}:WebView2");
+
+            if (addAlias)
+            {
+                result.AndAddXmlns(aliasToUse, xmlnamespace);
+            }
+
+            return result;
         }
     }
 }
