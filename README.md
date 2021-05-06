@@ -7,7 +7,7 @@ The program uses `XamlConverter` and takes a `.xaml` file and an
 implementation of `ICustomAnalyzer`.
 
 The program:
-- writes our the original XAML contents.
+- writes out the original XAML contents.
 - parses the document identifying changes to make based on the analyzer(s).
 - the file is modified based on what the analyzer(s) report.
 - the modified file contents are then shown on screen.
