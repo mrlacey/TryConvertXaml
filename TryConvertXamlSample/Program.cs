@@ -49,8 +49,6 @@ namespace TryConvertXamlSample
             // This is the class that does the conversions
             var sut = new RapidXaml.XamlConverter();
 
-            // This early preview only works on a single file.
-            // But the intention is to support taking a csproj or vbproj file as input too.
             // The second parameter passed is a collection of ICustomAnalyzer implementations that document the changes to make as part of the conversion.
             var (success, details) = sut.ConvertFile("./TestDocument.xaml", new[] { new WebViewToWebView2Converter() });
 
@@ -96,8 +94,6 @@ namespace TryConvertXamlSample
             // This is the class that does the conversions
             var sut = new RapidXaml.XamlConverter();
 
-            // This early preview only works on a single file.
-            // But the intention is to support taking a csproj or vbproj file as input too.
             // The second parameter passed is a collection of ICustomAnalyzer implementations that document the changes to make as part of the conversion.
             var (success, details) = sut.ConvertAllFilesInProject("./TestProject/MyDemoApp.csproj", new[] { new WebViewToWebView2Converter() });
 
