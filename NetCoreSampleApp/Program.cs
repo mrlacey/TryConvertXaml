@@ -1,10 +1,10 @@
-﻿using System;
+﻿using RapidXaml;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using RapidXaml;
 
-namespace TryConvertXamlSample
+namespace NetCoreSampleApp
 {
     class Program
     {
@@ -83,6 +83,9 @@ namespace TryConvertXamlSample
             foreach (string dirPath in Directory.GetDirectories(sourcePath, "*",
                 SearchOption.AllDirectories))
                 Directory.CreateDirectory(dirPath.Replace(sourcePath, destPath));
+
+            if (!Directory.Exists(destPath))
+                Directory.CreateDirectory(destPath);
 
             // Copy all the files & Replaces any files with the same name
             foreach (string newPath in Directory.GetFiles(sourcePath, "*.*",

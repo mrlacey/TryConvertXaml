@@ -1,0 +1,45 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="..\TryConvertXamlSample\SampleProject\App.xaml" Link="SampleProject\App.xaml">
+      <Generator></Generator>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\TryConvertXamlSample\SampleProject\MainPage.xaml" Link="SampleProject\MainPage.xaml">
+      <Generator></Generator>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\TryConvertXamlSample\SampleProject\Page1.xaml" Link="SampleProject\Page1.xaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\TryConvertXamlSample\SampleProject\Page2.xaml" Link="SampleProject\Page2.xaml">
+      <Generator></Generator>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\TryConvertXamlSample\SampleProject\Page3.xaml" Link="SampleProject\Page3.xaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\TryConvertXamlSample\SampleProject\MyDemoApp.csproj" Link="SampleProject\MyDemoApp.csproj">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="..\TryConvertXamlSample\OriginalDocument.xaml" Link="OriginalDocument.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="RapidXaml.AutoFix" Version="1.0.5" />
+  </ItemGroup>
+
+
+
+</Project>
